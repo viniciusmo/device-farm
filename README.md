@@ -1,6 +1,6 @@
 # device-farm
 
-[![Gem](https://img.shields.io/gem/v/GEMNAME.svg?style=flat)](http://rubygems.org/gems/devicefarm "View this project in Rubygems")
+[![Gem](https://img.shields.io/gem/v/devicefarm.svg?style=flat)](http://rubygems.org/gems/devicefarm "View this project in Rubygems")
 
 A simple way to upload your artifacts to test your app in AWS Device Farm
 
