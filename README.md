@@ -28,5 +28,5 @@ viniciusmo
 
 ## License
 
-devicefarm gem is available under the MIT license. See the LICENSE file for more info.
+This project is available under the MIT license. See the LICENSE file for more info.
 
