@@ -21,7 +21,10 @@ jobs:
           command: gem build devicefarm.gemspec
       - run:
           name: publish gem
-          command: ruby deploy.rb
+          command: |
+            mkdir ~/.gem
+            ruby deploy.rb
+
 workflows:
   version: 2
   ci-cd:
