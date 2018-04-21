@@ -9,6 +9,10 @@ A simple way to upload your artifacts to test your app in AWS Device Farm
 ```ruby
 require "devicefarm"
 
+ENV['AWS_ACCESS_KEY_ID']     = 'xxxxx'
+ENV['AWS_SECRET_ACCESS_KEY'] = 'xxxxx'
+ENV['AWS_REGION']            = 'us-west-2'
+  
 DeviceFarm.test_with_calabash(
 	project_name:"best-project",
 	device_pool_name: "top-devices-google-play",
