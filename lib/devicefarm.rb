@@ -4,9 +4,9 @@ class DeviceFarm
 								device_pool_name:,
 								apk_path:,
 								calabash_test_package_path:)
-		devicefarmapi = DeviceFarm::DeviceFarmApi.new()
-		project = devicefarmapi.get_project_by_name(project_name:project_name)
-    	device_pool = devicefarmapi.get_device_pool_by_name(
+        devicefarmapi = DeviceFarm::DeviceFarmApi.new()
+        project = devicefarmapi.get_project_by_name(project_name:project_name)
+        device_pool = devicefarmapi.get_device_pool_by_name(
     		pool_name:device_pool_name,
     		project:project)
     	upload_apk = devicefarmapi.upload_artifact(
