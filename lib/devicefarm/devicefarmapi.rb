@@ -1,5 +1,7 @@
 require "aws-sdk-devicefarm"
 
+POLLING_INTERVAL = 1  
+
 class DeviceFarm::DeviceFarmApi
 
 	def initialize
@@ -24,7 +26,21 @@ class DeviceFarm::DeviceFarmApi
 	          http.send_request("PUT", url.request_uri, contents, { 'content-type' => 'application/octet-stream' })
 	    end
 	end
-	
+
+	def get_upload_result(upload)
+		uploadResult  = @client.get_upload({
+		  		arn: "#{upload.arn}",
+		}).upload
+	end
+
+	def wait_for_upload_finish(upload)
+		upload_result = get_upload_result(upload)
+		while(!upload_result.status == "SUCCEEDED")
+			upload_result = get_upload_result(upload)
+			sleep(POLLING_INTERVAL)
+		end
+	end
+
 	def upload_artifact(file_path:,type:,project:)
 		file = File.new(file_path)
 		upload = @client.create_upload({
@@ -32,6 +48,7 @@ class DeviceFarm::DeviceFarmApi
   				name: File.basename(file),
   				type: type}).upload
 		upload_file.(upload.url,file_path)
+		wait_for_upload_finish(upload)
 		upload
 	end
 
