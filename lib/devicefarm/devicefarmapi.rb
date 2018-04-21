@@ -16,13 +16,22 @@ class DeviceFarm::DeviceFarmApi
 		device_pool
 	end
 
+
+	 def upload_file(url, path)
+	    url = URI.parse(upload.url)
+	    contents = File.open(path, 'rb').read
+	    Net::HTTP.new(url.host).start do |http|
+	          http.send_request("PUT", url.request_uri, contents, { 'content-type' => 'application/octet-stream' })
+	    end
+	end
+	
 	def upload_artifact(file_path:,type:,project:)
 		file = File.new(file_path)
 		upload = @client.create_upload({
   				project_arn: project.arn,
   				name: File.basename(file),
   				type: type}).upload
-		%x[curl -T #{file_path} "#{upload.url}"]
+		upload_file.(upload.url,file_path)
 		upload
 	end
 
