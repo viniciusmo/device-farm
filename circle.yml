@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/ruby:2.4.1-node-browsers
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: build gem
+          command: gem build devicefarm.gemspec
