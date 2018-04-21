@@ -22,15 +22,15 @@ jobs:
       - run:
           name: publish gem
           command: ruby deploy.rb
-workflows:
-  version: 2
-  ci-cd:
-    jobs:
-      - ci
-      - cd:
-          requires:
-            - ci
-          filters:
-            branches:
-              only:
-                - /master*/
+# workflows:
+#   version: 2
+#   ci-cd:
+#     jobs:
+#       - ci
+#       - cd:
+#           requires:
+#             - ci
+#           filters:
+#             branches:
+#               only:
+#                 - /master*/
