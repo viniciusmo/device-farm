@@ -1,2 +1,1 @@
-%x[gem build devicefarm.gemspec]
-%x[gem install ./devicefarm-0.0.1.gem]
+%x[curl -u viniciusmo:#{ENV['RUBY_GEM_PASSWORD']} https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials]
