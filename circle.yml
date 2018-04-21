@@ -24,6 +24,7 @@ jobs:
           command: |
             mkdir ~/.gem
             ruby deploy.rb
+            gem push devicefarm-*.gem
 
 workflows:
   version: 2
