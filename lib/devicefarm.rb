@@ -8,7 +8,7 @@ class DeviceFarm
         end
     end
 
-	def self.test_with_calabash(
+    def self.test_with_calabash(
         project_name:,
         device_pool_name:,
         binary_path:,
