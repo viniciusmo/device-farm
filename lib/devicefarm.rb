@@ -1,9 +1,17 @@
 class DeviceFarm
 
+    def self.get_device_type_by_binary(binary_path)
+        if binary_path.include? ".apk"
+            "ANDROID_APP"
+        else
+            "IOS_APP"
+        end
+    end
+
 	def self.test_with_calabash(
         project_name:,
         device_pool_name:,
-        apk_path:,
+        binary_path:,
         calabash_test_package_path:)
     
         devicefarmapi = DeviceFarm::DeviceFarmApi.new()
@@ -12,8 +20,8 @@ class DeviceFarm
     		pool_name:device_pool_name,
     		project:project)
     	upload_apk = devicefarmapi.upload_artifact(
-    		file_path:apk_path,
-    		type: "ANDROID_APP",
+    		file_path:binary_path,
+    		type: get_device_type_by_binary,
     		project:project)
     	upload_artifact_test = devicefarmapi.upload_artifact(
     		file_path:calabash_test_package_path,

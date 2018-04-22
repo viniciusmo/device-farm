@@ -16,7 +16,7 @@ ENV['AWS_REGION']            = 'us-west-2'
 DeviceFarm.test_with_calabash(
 	project_name:"best-project",
 	device_pool_name: "top-devices-google-play",
-	apk_path:"best-app.apk",
+	binary_path:"best-app.apk",
 	calabash_test_package_path:"calabash_features.zip")
 ```
 
