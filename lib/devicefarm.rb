@@ -27,11 +27,12 @@ class DeviceFarm
     		file_path:calabash_test_package_path,
     		type: "CALABASH_TEST_PACKAGE",
     		project:project)
-    	devicefarmapi.run(project:project,
-    					  device_pool:device_pool,
-    					  upload_apk:upload_apk,
-    					  upload_artifact_test:upload_artifact_test,
-    					  type: "CALABASH")
+    	devicefarmapi.run(
+            project:project,
+    		device_pool:device_pool,
+    		upload_apk:upload_apk,
+    		upload_artifact_test:upload_artifact_test,
+    		type: "CALABASH")
   	end
 
 end
