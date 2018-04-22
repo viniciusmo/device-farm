@@ -1,5 +1,6 @@
 # device-farm
 
+[![CircleCI](https://circleci.com/gh/viniciusmo/device-farm.svg?style=shield)](https://circleci.com/gh/viniciusmo/device-farm)
 [![Gem](https://img.shields.io/gem/v/devicefarm.svg?style=flat)](http://rubygems.org/gems/devicefarm "View this project in Rubygems")
 
 A simple way to upload your artifacts to test your app in AWS Device Farm
