@@ -47,7 +47,7 @@ class DeviceFarm::DeviceFarmApi
   				project_arn: project.arn,
   				name: File.basename(file),
   				type: type}).upload
-		upload_file.(upload.url,file_path)
+		upload_file(upload.url,file_path)
 		wait_for_upload_finish(upload)
 		upload
 	end
