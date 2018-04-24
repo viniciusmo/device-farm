@@ -21,7 +21,7 @@ class DeviceFarm
     		project:project)
     	upload_apk = devicefarmapi.upload_artifact(
     		file_path:binary_path,
-    		type: get_device_type_by_binary,
+    		type: get_device_type_by_binary(binary_path),
     		project:project)
     	upload_artifact_test = devicefarmapi.upload_artifact(
     		file_path:calabash_test_package_path,
