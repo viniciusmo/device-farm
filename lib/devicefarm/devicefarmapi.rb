@@ -20,7 +20,7 @@ class DeviceFarm::DeviceFarmApi
 
 
 	 def upload_file(url, path)
-	    url = URI.parse(upload.url)
+	    url = URI.parse(url)
 	    contents = File.open(path, 'rb').read
 	    Net::HTTP.new(url.host).start do |http|
 	          http.send_request("PUT", url.request_uri, contents, { 'content-type' => 'application/octet-stream' })
