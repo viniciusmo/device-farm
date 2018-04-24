@@ -12,7 +12,8 @@ class DeviceFarm
         project_name:,
         device_pool_name:,
         binary_path:,
-        calabash_test_package_path:)
+        calabash_test_package_path:,
+        wait_for_completion:true)
     
         devicefarmapi = DeviceFarm::DeviceFarmApi.new()
         project = devicefarmapi.get_project_by_name(project_name:project_name)
