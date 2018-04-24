@@ -1,6 +1,6 @@
 require "aws-sdk-devicefarm"
 
-POLLING_INTERVAL = 1  
+POLLING_INTERVAL = 3  
 
 class DeviceFarm::DeviceFarmApi
 
