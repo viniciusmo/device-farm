@@ -39,7 +39,6 @@ class DeviceFarm::DeviceFarmApi
 			upload_result = get_upload_result(upload)
 			sleep(POLLING_INTERVAL)
 		end
-		sleep(10)
 	end
 
 	def upload_artifact(file_path:,type:,project:)
@@ -53,12 +52,12 @@ class DeviceFarm::DeviceFarmApi
 		upload
 	end
 
-	def run(project:,device_pool:,upload_apk:,upload_artifact_test:,type:)
+	def run(project:,device_pool:,upload_app:,upload_artifact_test:,type:)
 		@client.schedule_run({
 		  project_arn: project.arn, 
-		  app_arn: upload_apk.arn,
+		  app_arn: upload_app.arn,
 		  device_pool_arn: device_pool.arn, 
-		  name: "Test 2",
+		  name: date.now(),
 		  test: { 
 		    type: type,
 		    test_package_arn: upload_artifact_test.arn

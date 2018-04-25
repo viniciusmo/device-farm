@@ -20,7 +20,7 @@ class DeviceFarm
         device_pool = devicefarmapi.get_device_pool_by_name(
     		pool_name:device_pool_name,
     		project:project)
-    	upload_apk = devicefarmapi.upload_artifact(
+    	upload_app = devicefarmapi.upload_artifact(
     		file_path:binary_path,
     		type: get_device_type_by_binary(binary_path),
     		project:project)
@@ -31,7 +31,7 @@ class DeviceFarm
     	devicefarmapi.run(
             project:project,
     		device_pool:device_pool,
-    		upload_apk:upload_apk,
+    		upload_app:upload_app,
     		upload_artifact_test:upload_artifact_test,
     		type: "CALABASH")
   	end
