@@ -39,6 +39,7 @@ class DeviceFarm::DeviceFarmApi
 			upload_result = get_upload_result(upload)
 			sleep(POLLING_INTERVAL)
 		end
+		sleep(POLLING_INTERVAL)
 	end
 
 	def upload_artifact(file_path:,type:,project:)
