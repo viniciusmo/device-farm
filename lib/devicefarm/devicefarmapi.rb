@@ -34,12 +34,12 @@ class DeviceFarm::DeviceFarmApi
 	end
 
 	def wait_for_upload_finish(upload)
-		upload_result = get_upload_result(upload)
-		p upload_result.status
-		
+		upload_result = get_upload_result(upload)		
 		while(upload_result.status != "SUCCEEDED")
 			upload_result = get_upload_result(upload)
-			p upload_result
+			if upload_result.status.to_s == "FAILED"
+				break
+			end
 			sleep(POLLING_INTERVAL)
 		end
 	end
