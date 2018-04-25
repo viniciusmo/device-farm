@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'devicefarm'
-  s.version     = '0.0.14'
+  s.version     = '0.0.15'
   s.date        = '2018-04-19'
   s.summary     = "Device Farm"
   s.description = "A simple way to upload your artifacts to test your app ;)"

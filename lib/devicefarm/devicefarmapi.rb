@@ -35,7 +35,8 @@ class DeviceFarm::DeviceFarmApi
 
 	def wait_for_upload_finish(upload)
 		upload_result = get_upload_result(upload)
-		p upload_result
+		p upload_result.status
+		
 		while(upload_result.status != "SUCCEEDED")
 			upload_result = get_upload_result(upload)
 			p upload_result
