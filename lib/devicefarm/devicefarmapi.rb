@@ -52,12 +52,16 @@ class DeviceFarm::DeviceFarmApi
 		upload
 	end
 
+	def random_name_for_test
+		(0...8).map { (65 + rand(26)).chr }.join
+	end
+
 	def run(project:,device_pool:,upload_app:,upload_artifact_test:,type:)
 		@client.schedule_run({
 		  project_arn: project.arn, 
 		  app_arn: upload_app.arn,
 		  device_pool_arn: device_pool.arn, 
-		  name: date.now(),
+		  name: random_name_for_test,
 		  test: { 
 		    type: type,
 		    test_package_arn: upload_artifact_test.arn
