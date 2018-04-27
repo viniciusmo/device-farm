@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/viniciusmo/device-farm.svg?style=shield)](https://circleci.com/gh/viniciusmo/device-farm)
 [![Gem](https://img.shields.io/gem/v/devicefarm.svg?style=flat)](http://rubygems.org/gems/devicefarm "View this project in Rubygems")
-![](https://ruby-gem-downloads-badge.herokuapp.com/devicefarm?extension=png&type=total)
+![](https://ruby-gem-downloads-badge.herokuapp.com/devicefarm?extension=svg&type=total)
 
 A simple way to upload your artifacts to test your app in AWS Device Farm
 
